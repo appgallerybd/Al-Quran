@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>القرآن الكريم — আল-কুরআন প্রিমিয়াম</title>
+    <title>القرآن الكريم — আল-কুরআন লাক্সারি</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
@@ -15,14 +15,13 @@
 
     <style>
         :root {
-            --bg-deep: #070b14;
-            --bg-card: #0f1626;
-            --bg-elevated: #172033;
-            --accent-gold: #e5b869;
-            --accent-gold-glow: rgba(229, 184, 105, 0.15);
+            --bg-deep: #050811;
+            --bg-card: #0b1120;
+            --bg-elevated: #131b2e;
+            --accent-gold: #e2b665;
             --accent-emerald: #10b981;
-            --text-primary: #f3edd7;
-            --text-muted: #94a3b8;
+            --text-primary: #f4efe2;
+            --text-muted: #64748b;
             --border: #1e293b;
             --arabic-font: 'Amiri', serif;
             --bangla-font: 'Noto Sans Bengali', sans-serif;
@@ -33,8 +32,7 @@
             --bg-deep: #f8fafc;
             --bg-card: #ffffff;
             --bg-elevated: #f1f5f9;
-            --accent-gold: #b48528;
-            --accent-gold-glow: rgba(180, 133, 40, 0.08);
+            --accent-gold: #b38426;
             --accent-emerald: #059669;
             --text-primary: #0f172a;
             --text-muted: #64748b;
@@ -47,68 +45,79 @@
             font-family: var(--ui-font);
             -webkit-tap-highlight-color: transparent;
             overscroll-behavior-y: contain;
+            user-select: none;
         }
 
         .bangla-text { font-family: var(--bangla-font); }
         .arabic-text { font-family: var(--arabic-font); direction: rtl; }
 
-        /* Custom Premium Scrollbar */
-        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        /* Custom High-Speed Smooth Scroller */
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-gold); }
 
-        /* Octagon Ayah Number Design */
+        /* Premium Octagon Badge */
         .ayah-octagon {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             background: var(--bg-elevated);
-            border: 1.5px solid var(--accent-gold);
+            border: 1px solid var(--border);
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            color: var(--accent-gold);
-            box-shadow: 0 4px 12px var(--accent-gold-glow);
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
         }
 
-        /* Active Card Glow styling */
-        .ayah-card-active {
+        /* High-Performance Text-Only Active Highlights */
+        .active-text-arabic {
+            color: var(--accent-gold) !important;
+            text-shadow: 0 0 1px var(--accent-gold);
+            transition: color 0.3s ease;
+        }
+        .active-text-bangla {
+            color: var(--accent-gold) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .active-octagon {
             border-color: var(--accent-gold) !important;
-            background-color: var(--bg-elevated) !important;
-            box-shadow: 0 0 20px var(--accent-gold-glow);
+            color: var(--accent-gold) !important;
         }
 
         .shimmer {
             background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-elevated) 50%, var(--bg-card) 75%);
             background-size: 200% 100%;
-            animation: loading-shimmer 1.5s infinite linear;
+            animation: loading-shimmer 1.2s infinite linear;
         }
         @keyframes loading-shimmer {
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
 
-        /* Mobile Safe Bottom Navigation Area padding */
-        .safe-bottom { padding-bottom: calc(env(safe-area-inset-bottom) + 80px); }
+        /* Mobile Optimization Fixes */
+        .safe-bottom-area { padding-bottom: calc(env(safe-area-inset-bottom) + 76px); }
+        .touch-target { min-width: 44px; min-height: 44px; }
     </style>
 </head>
 <body class="h-screen flex flex-col overflow-hidden antialiased">
 
     <header class="bg-[var(--bg-card)] border-b border-[var(--border)] px-4 py-3 flex items-center justify-between z-30 shrink-0">
-        <div class="flex items-center gap-2">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[var(--accent-gold)] to-amber-300 flex items-center justify-center shadow-lg">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent-gold)] to-amber-300 flex items-center justify-center shadow-md">
                 <i class="fa-solid fa-quran text-slate-900 text-lg"></i>
             </div>
             <div>
                 <h1 class="text-lg font-bold tracking-wide text-[var(--accent-gold)] arabic-text">القرآن الكريم</h1>
-                <p class="text-[10px] text-[var(--text-muted)] bangla-text -mt-1 font-medium tracking-tight">আল-কুরআন প্রিমিয়াম</p>
+                <p class="text-[10px] text-[var(--text-muted)] bangla-text -mt-0.5 tracking-wide">আল-কুরআন লাক্সারি প্ল্যাটফর্ম</p>
             </div>
         </div>
 
         <div class="flex items-center gap-2">
-            <button onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center text-[var(--accent-gold)] hover:scale-105 active:scale-95 transition cursor-pointer" id="themeToggler">
+            <button onclick="toggleAppTheme()" class="touch-target rounded-xl bg-[var(--bg-elevated)] border border-[var(--border)] flex items-center justify-center text-[var(--accent-gold)] hover:scale-105 active:scale-95 transition cursor-pointer" id="themeIconBtn">
                 <i class="fa-solid fa-moon"></i>
             </button>
         </div>
@@ -116,29 +125,28 @@
 
     <div class="flex-1 flex overflow-hidden relative">
         
-        <aside id="surahSidebar" class="bg-[var(--bg-card)] border-r border-[var(--border)] w-full md:w-[320px] flex flex-col absolute md:relative inset-y-0 left-0 z-40 -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+        <aside id="surahSidebarPanel" class="bg-[var(--bg-card)] border-r border-[var(--border)] w-full md:w-[320px] flex flex-col absolute md:relative inset-y-0 left-0 z-40 -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
             <div class="p-4 border-b border-[var(--border)]">
                 <div class="relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-xs text-[var(--text-muted)]"></i>
-                    <input type="text" id="surahSearch" placeholder="সূরার নাম খুঁজুন (বাংলা / English)..." class="w-full pl-9 pr-4 py-2.5 bg-[var(--bg-deep)] border border-[var(--border)] rounded-xl text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent-gold)] bangla-text" oninput="filterSurahSearch(this.value)">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-xs text-[var(--text-muted)]"></i>
+                    <input type="text" id="sidebarSearchField" placeholder="সূরার নাম খুঁজুন (বাংলা / English)..." class="w-full pl-10 pr-4 py-2.5 bg-[var(--bg-deep)] border border-[var(--border)] rounded-xl text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--accent-gold)] bangla-text" oninput="executeLiveSidebarSearch(this.value)">
                 </div>
             </div>
 
-            <div id="surahListElement" class="flex-1 overflow-y-auto p-2 space-y-1.5 pb-24 md:pb-4">
-                <div class="shimmer h-14 rounded-xl w-full opacity-20"></div>
-                <div class="shimmer h-14 rounded-xl w-full opacity-20"></div>
-                <div class="shimmer h-14 rounded-xl w-full opacity-20"></div>
+            <div id="sidebarListWrapper" class="flex-1 overflow-y-auto p-3 space-y-2 pb-24 md:pb-4">
+                <div class="shimmer h-14 rounded-xl w-full opacity-10"></div>
+                <div class="shimmer h-14 rounded-xl w-full opacity-10"></div>
             </div>
         </aside>
 
-        <div id="sidebarBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 hidden md:hidden" onclick="closeMobileSidebar()"></div>
+        <div id="responsiveSidebarBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 hidden md:hidden" onclick="closeResponsiveMobileSidebar()"></div>
 
         <main class="flex-1 flex flex-col overflow-hidden bg-[var(--bg-deep)]">
             
-            <section class="bg-[var(--bg-card)] border-b border-[var(--border)] px-4 py-3 flex flex-wrap gap-3 items-center justify-between shrink-0">
+            <section class="bg-[var(--bg-card)] border-b border-[var(--border)] px-4 py-2.5 flex flex-wrap gap-3 items-center justify-between shrink-0">
                 <div class="flex items-center gap-2">
-                    <span class="text-[11px] text-[var(--text-muted)] font-medium bangla-text"><i class="fa-solid fa-headset text-[var(--accent-gold)] mr-1"></i> কারী:</span>
-                    <select id="reciterSelector" class="bg-[var(--bg-elevated)] border border-[var(--border)] rounded-lg px-2 py-1 text-xs text-[var(--accent-gold)] font-medium focus:outline-none bangla-text cursor-pointer" onchange="changeReciterProfile(this.value)">
+                    <span class="text-[11px] text-[var(--text-muted)] font-medium bangla-text"><i class="fa-solid fa-microphone-lines text-[var(--accent-gold)] mr-1"></i> ক্বারী:</span>
+                    <select id="reciterProfileSelector" class="bg-[var(--bg-elevated)] border border-[var(--border)] rounded-lg px-2.5 py-1 text-xs text-[var(--accent-gold)] font-medium focus:outline-none bangla-text cursor-pointer" onchange="switchAppReciterContext(this.value)">
                         <option value="ar.alafasy">মিশারি রাশিদ আল-আফাসি</option>
                         <option value="ar.abdurrahmaansudais">আব্দুর রহমান আস-সুদাইস</option>
                         <option value="ar.husary">মাহমুদ খলিল আল-হুসারি</option>
@@ -148,64 +156,64 @@
                 </div>
 
                 <div class="flex bg-[var(--bg-deep)] border border-[var(--border)] rounded-lg p-0.5 text-xs font-semibold">
-                    <button id="viewModeAyah" onclick="updateViewMode('ayah')" class="px-3 py-1.5 rounded-md bg-[var(--bg-card)] text-[var(--accent-gold)] transition bangla-text cursor-pointer">আয়াত মোড</button>
-                    <button id="viewModePage" onclick="updateViewMode('page')" class="px-3 py-1.5 rounded-md text-[var(--text-muted)] transition bangla-text cursor-pointer">পেইজ মোড</button>
+                    <button id="modeTabAyah" onclick="changeAppReadingMode('ayah')" class="px-3 py-1.5 rounded-md bg-[var(--bg-card)] text-[var(--accent-gold)] transition bangla-text cursor-pointer">আয়াত মোড</button>
+                    <button id="modeTabPage" onclick="changeAppReadingMode('page')" class="px-3 py-1.5 rounded-md text-[var(--text-muted)] transition bangla-text cursor-pointer">পেইজ মোড</button>
                 </div>
             </section>
 
-            <section id="mainCoreViewer" class="flex-1 overflow-y-auto p-4 md:p-6 safe-bottom">
+            <section id="coreWorkspaceContainer" class="flex-1 overflow-y-auto p-4 md:p-6 safe-bottom-area">
                 <div class="flex flex-col items-center justify-center py-32 text-[var(--text-muted)]">
-                    <i class="fa-solid fa-spinner animate-spin text-3xl text-[var(--accent-gold)] mb-4"></i>
-                    <p class="text-xs bangla-text font-medium">পবিত্র কুরআনুল কারীমের আয়াতসমূহ লোড হচ্ছে...</p>
+                    <i class="fa-solid fa-circle-notch animate-spin text-3xl text-[var(--accent-gold)] mb-4"></i>
+                    <p class="text-xs bangla-text font-medium">কুরআনুল কারীম লোড হচ্ছে...</p>
                 </div>
             </section>
         </main>
     </div>
 
-    <footer class="bg-[var(--bg-card)] border-t border-[var(--border)] p-3 md:px-6 z-40 shadow-2xl relative shrink-0">
+    <footer class="bg-[var(--bg-card)] border-t border-[var(--border)] p-3 md:px-6 z-40 shadow-2xl shrink-0">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-3">
             
             <div class="w-full md:w-1/4 text-center md:text-left flex flex-col justify-center">
-                <h4 id="audioMetaSurahName" class="text-sm font-bold text-[var(--accent-gold)] bangla-text">সূরা আল-ফাতিহা</h4>
-                <p id="audioMetaAyahIndex" class="text-[10px] text-[var(--text-muted)] bangla-text font-medium mt-0.5">আয়াত: ১ / ৭</p>
+                <h4 id="footerMetaSurahTitle" class="text-sm font-bold text-[var(--accent-gold)] bangla-text">সূরার নাম</h4>
+                <p id="footerMetaAyahIndicator" class="text-[10px] text-[var(--text-muted)] bangla-text font-medium mt-0.5">আয়াত রিডিং ট্র্যাকার</p>
             </div>
 
             <div class="flex-1 w-full flex flex-col items-center gap-1">
                 <div class="flex items-center gap-6">
-                    <button onclick="toggleSingleVerseLoop()" id="loopVerseIconBtn" class="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition text-xs flex flex-col items-center cursor-pointer" title="আয়াত লুপ">
+                    <button onclick="toggleSingleVerseLoopOption()" id="loopSingleVerseToggleBtn" class="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition text-xs flex flex-col items-center cursor-pointer touch-target" title="আয়াত লুপ">
                         <i class="fa-solid fa-arrows-spin text-base"></i>
                         <span class="text-[8px] font-bold -mt-0.5">Verse</span>
                     </button>
                     
-                    <button onclick="triggerPreviousAyah()" class="text-[var(--accent-gold)] text-base hover:scale-110 active:scale-95 transition cursor-pointer" title="আগের আয়াত">
+                    <button onclick="playPreviousVerseTrack()" class="text-[var(--accent-gold)] text-base hover:scale-110 active:scale-95 transition cursor-pointer touch-target" title="আগের আয়াত">
                         <i class="fa-solid fa-backward-step"></i>
                     </button>
                     
-                    <button onclick="handleGlobalPlayPauseState()" id="globalMasterPlayTrigger" class="w-12 h-12 rounded-full bg-gradient-to-tr from-[var(--accent-gold)] to-amber-400 text-slate-950 text-base flex items-center justify-center shadow-lg active:scale-90 hover:brightness-110 transition cursor-pointer" title="প্লে/পজ">
+                    <button onclick="handleMasterPlaybackTrigger()" id="globalPlayPauseFloatingBtn" class="w-12 h-12 rounded-full bg-gradient-to-tr from-[var(--accent-gold)] to-amber-400 text-slate-950 text-base flex items-center justify-center shadow-lg active:scale-90 hover:brightness-110 transition cursor-pointer" title="প্লে/পজ">
                         <i class="fa-solid fa-play pl-0.5"></i>
                     </button>
                     
-                    <button onclick="triggerNextAyah()" class="text-[var(--accent-gold)] text-base hover:scale-110 active:scale-95 transition cursor-pointer" title="পরের আয়াত">
+                    <button onclick="playNextVerseTrack()" class="text-[var(--accent-gold)] text-base hover:scale-110 active:scale-95 transition cursor-pointer touch-target" title="পরের আয়াত">
                         <i class="fa-solid fa-forward-step"></i>
                     </button>
 
-                    <button onclick="toggleWholeSurahLoop()" id="loopSurahIconBtn" class="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition text-xs flex flex-col items-center cursor-pointer" title="সূরা লুপ">
+                    <button onclick="toggleWholeSurahLoopOption()" id="loopWholeSurahToggleBtn" class="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition text-xs flex flex-col items-center cursor-pointer touch-target" title="সূরা লুপ">
                         <i class="fa-solid fa-rotate text-base"></i>
                         <span class="text-[8px] font-bold -mt-0.5">Surah</span>
                     </button>
                 </div>
 
                 <div class="w-full flex items-center gap-2.5 text-[10px] text-[var(--text-muted)] font-mono">
-                    <span id="playerCurrentTimeLabel">00:00</span>
-                    <input type="range" id="playerProgressBarSlider" value="0" min="0" max="100" class="flex-1 h-1 bg-[var(--bg-deep)] rounded-lg appearance-none cursor-pointer accent-[var(--accent-emerald)]" oninput="handleAudioTimelineSeeking(this.value)">
-                    <span id="playerTotalDurationLabel">00:00</span>
+                    <span id="playerTimerCurrentTime">00:00</span>
+                    <input type="range" id="playerTimelineProgressSlider" value="0" min="0" max="100" class="flex-1 h-1 bg-[var(--bg-deep)] rounded-lg appearance-none cursor-pointer accent-[var(--accent-emerald)]" oninput="seekActiveAudioTimeline(this.value)">
+                    <span id="playerTimerTotalDuration">00:00</span>
                 </div>
             </div>
 
             <div class="hidden md:flex w-full md:w-1/4 items-center justify-end gap-4 text-xs">
                 <div class="flex items-center gap-1.5 bg-[var(--bg-deep)] border border-[var(--border)] px-2 py-1 rounded-lg">
                     <i class="fa-solid fa-gauge-high text-[var(--text-muted)] text-[10px]"></i>
-                    <select id="playerSpeedMenu" onchange="updatePlayerSpeedRate(this.value)" class="bg-transparent border-none font-medium text-[var(--text-muted)] text-[10px] focus:outline-none cursor-pointer">
+                    <select id="playerPlaybackSpeedMenu" onchange="adjustAudioPlaybackVelocity(this.value)" class="bg-transparent border-none font-medium text-[var(--text-muted)] text-[10px] focus:outline-none cursor-pointer">
                         <option value="0.75">0.75x</option>
                         <option value="1.0" selected>1.0x</option>
                         <option value="1.25">1.25x</option>
@@ -214,758 +222,739 @@
                 </div>
                 
                 <div class="flex items-center gap-2">
-                    <button onclick="handleAudioMuteToggling()" id="playerVolumeStateIcon" class="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition cursor-pointer">
+                    <button onclick="toggleAudioMuteState()" id="playerVolumeIconBadge" class="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition cursor-pointer">
                         <i class="fa-solid fa-volume-high"></i>
                     </button>
-                    <input type="range" id="playerVolumeSlider" min="0" max="1" step="0.1" value="1" class="w-16 h-1 accent-[var(--accent-gold)] bg-[var(--bg-deep)] rounded-lg appearance-none cursor-pointer" oninput="updateAudioVolumeLevel(this.value)">
+                    <input type="range" id="playerVolumeControlSlider" min="0" max="1" step="0.1" value="1" class="w-16 h-1 accent-[var(--accent-gold)] bg-[var(--bg-deep)] rounded-lg appearance-none cursor-pointer" oninput="changeAppVolumeIntensity(this.value)">
                 </div>
             </div>
 
         </div>
     </footer>
 
-    <nav class="md:hidden fixed bottom-0 inset-x-0 bg-[var(--bg-card)]/90 backdrop-blur-md border-t border-[var(--border)] h-16 flex items-center justify-around px-2 z-50 shadow-xl pb-safe">
-        <button onclick="openMobileSidebarTab()" id="navTabSurah" class="flex flex-col items-center text-[var(--accent-gold)] transition gap-0.5 min-w-[50px] cursor-pointer">
+    <nav class="md:hidden fixed bottom-0 inset-x-0 bg-[var(--bg-card)]/95 backdrop-blur-md border-t border-[var(--border)] h-16 flex items-center justify-around px-2 z-50 shadow-xl pb-safe">
+        <button onclick="openResponsiveMobileSidebarTab()" id="tabItemSurah" class="flex flex-col items-center text-[var(--accent-gold)] transition gap-0.5 min-w-[50px] cursor-pointer">
             <i class="fa-solid fa-list-ul text-lg"></i>
             <span class="text-[9px] font-bold bangla-text">সূরাসমূহ</span>
         </button>
-        <button onclick="switchToMainReaderTab()" id="navTabRead" class="flex flex-col items-center text-[var(--text-muted)] transition gap-0.5 min-w-[50px] cursor-pointer">
+        <button onclick="navigateToReaderMainDashboard()" id="tabItemRead" class="flex flex-col items-center text-[var(--text-muted)] transition gap-0.5 min-w-[50px] cursor-pointer">
             <i class="fa-solid fa-book-open text-lg"></i>
             <span class="text-[9px] font-bold bangla-text">তিলাওয়াত</span>
         </button>
-        <button onclick="renderUserBookmarksDashboard()" id="navTabBookmark" class="flex flex-col items-center text-[var(--text-muted)] transition gap-0.5 min-w-[50px] cursor-pointer">
+        <button onclick="loadUserBookmarksDashboardPage()" id="tabItemBookmark" class="flex flex-col items-center text-[var(--text-muted)] transition gap-0.5 min-w-[50px] cursor-pointer">
             <i class="fa-solid fa-bookmark text-lg"></i>
-            <span class="text-[9px] font-bold bangla-text">বুকমার্ক</span>
+            <span class="text-[9px] font-bold bangla-text">বुकমার্ক</span>
         </button>
-        <button onclick="openCustomSettingsViewPage()" id="navTabSettings" class="flex flex-col items-center text-[var(--text-muted)] transition gap-0.5 min-w-[50px] cursor-pointer">
+        <button onclick="loadAppSettingsViewDashboardPage()" id="tabItemSettings" class="flex flex-col items-center text-[var(--text-muted)] transition gap-0.5 min-w-[50px] cursor-pointer">
             <i class="fa-solid fa-sliders text-lg"></i>
             <span class="text-[9px] font-bold bangla-text">সেটিংস</span>
         </button>
     </nav>
 
-    <audio id="nativeAudioElement" preload="auto"></audio>
+    <audio id="nativeAudioPlayerEngine" preload="auto"></audio>
 
     <script>
-        // Central Application Core Repository Global Reactive Management State
-        const GlobalAppState = {
-            surahCacheList: [],
-            currentActiveSurah: null,
-            currentAyahPointerIndex: 0,
-            activeReciterEdition: 'ar.alafasy',
-            isPlayingState: false,
+        const AppState = {
+            surahCacheIndexList: [],
+            currentSurahContextObj: null,
+            currentAyahActiveIndex: 0,
+            activeReciterIdString: 'ar.alafasy',
+            isPlaying: false,
             isLoopingSingleVerse: false,
             isLoopingWholeSurah: false,
-            audioVolumeLevel: 1.0,
-            audioSpeedPlaybackRate: 1.0,
-            userSavedBookmarks: [],
-            darkModeActive: true,
-            displayReadingMode: 'ayah', // 'ayah' | 'page'
-            activeDashboardViewTab: 'read', // 'surah' | 'read' | 'bookmark' | 'settings'
-            searchFilterString: '',
-            arabicTextFontSize: '2.4rem'
+            globalVolumeLevel: 1.0,
+            playbackRateSpeedVelocity: 1.0,
+            userSavedBookmarksList: [],
+            darkModeEnabled: true,
+            displayReadingMode: 'ayah', 
+            activeNavigationTab: 'read',
+            searchFilterQueryString: '',
+            arabicPhraseTextFontSize: '2.4rem'
         };
 
-        const nativeAudio = document.getElementById('nativeAudioElement');
-        const API_SERVER_ROOT = 'https://api.alquran.cloud/v1';
+        const coreAudioPlayer = document.getElementById('nativeAudioPlayerEngine');
+        const API_ENDPOINT_URL_ROOT = 'https://api.alquran.cloud/v1';
 
-        // Bootstrapping Entry Hook Initializer Configuration Listener
         window.addEventListener('DOMContentLoaded', async () => {
-            loadSavedPersistenceConfigurationData();
-            initializeSystemAudioListeners();
-            syncDisplayThemeUI();
+            loadLocalSettingsPersistenceStorageData();
+            setupCoreAudioEngineStateListeners();
+            syncAppThemeInterfaceDisplay();
             
-            // Dynamic initial data processing call loads
-            await requestSurahDataList();
+            await downloadSurahIndexCatalog();
             
-            const lastTrackedLocation = JSON.parse(localStorage.getItem('quran_last_position')) || { surah: 1, ayahIndex: 0 };
-            await loadSelectedSurahContext(lastTrackedLocation.surah, lastTrackedLocation.ayahIndex);
+            const lastPositionRecord = JSON.parse(localStorage.getItem('quran_last_position')) || { surah: 1, ayahIndex: 0 };
+            await fetchAndLoadSurahDataPackage(lastPositionRecord.surah, lastPositionRecord.ayahIndex);
             
-            updateNavigationActiveTabUI('read');
+            switchMobileActiveTabIndicatorState('read');
         });
 
-        // Parse state parameters inside local browser device profiles storage
-        function loadSavedPersistenceConfigurationData() {
-            GlobalAppState.userSavedBookmarks = JSON.parse(localStorage.getItem('quran_bookmarks')) || [];
-            GlobalAppState.activeReciterEdition = localStorage.getItem('quran_reciter') || 'ar.alafasy';
-            document.getElementById('reciterSelector').value = GlobalAppState.activeReciterEdition;
-            GlobalAppState.darkModeActive = localStorage.getItem('quran_theme') !== 'light';
-            GlobalAppState.arabicTextFontSize = localStorage.getItem('quran_font_size') || '2.4rem';
+        function loadLocalSettingsPersistenceStorageData() {
+            AppState.userSavedBookmarksList = JSON.parse(localStorage.getItem('quran_bookmarks')) || [];
+            AppState.activeReciterIdString = localStorage.getItem('quran_reciter') || 'ar.alafasy';
+            document.getElementById('reciterProfileSelector').value = AppState.activeReciterIdString;
+            AppState.darkModeEnabled = localStorage.getItem('quran_theme') !== 'light';
+            AppState.arabicPhraseTextFontSize = localStorage.getItem('quran_font_size') || '2.4rem';
         }
 
-        // Apply dark/light core configuration classes
-        function syncDisplayThemeUI() {
-            const documentElementClass = document.documentElement.classList;
-            const togglerIconNode = document.getElementById('themeToggler');
-            if(GlobalAppState.darkModeActive) {
+        function syncAppThemeInterfaceDisplay() {
+            const iconBtnNode = document.getElementById('themeIconBtn');
+            if(AppState.darkModeEnabled) {
                 document.documentElement.classList.add('dark');
                 document.documentElement.classList.remove('light');
-                togglerIconNode.innerHTML = `<i class="fa-solid fa-sun text-amber-400"></i>`;
+                iconBtnNode.innerHTML = `<i class="fa-solid fa-sun text-amber-400"></i>`;
             } else {
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
-                togglerIconNode.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+                iconBtnNode.innerHTML = `<i class="fa-solid fa-moon"></i>`;
             }
         }
 
-        function toggleTheme() {
-            GlobalAppState.darkModeActive = !GlobalAppState.darkModeActive;
-            localStorage.setItem('quran_theme', GlobalAppState.darkModeActive ? 'dark' : 'light');
-            syncDisplayThemeUI();
-            if(!GlobalAppState.currentActiveSurah && GlobalAppState.activeDashboardViewTab === 'read') return;
-            if(GlobalAppState.activeDashboardViewTab === 'read') drawSurahViewerCanvas();
+        function toggleAppTheme() {
+            AppState.darkModeEnabled = !AppState.darkModeEnabled;
+            localStorage.setItem('quran_theme', AppState.darkModeEnabled ? 'dark' : 'light');
+            syncAppThemeInterfaceDisplay();
+            if(AppState.activeNavigationTab === 'read') drawActiveSurahCanvasScreen();
         }
 
-        // Fetch complete index listing array for 114 Surahs from Endpoint API
-        async function requestSurahDataList() {
+        async function downloadSurahIndexCatalog() {
             try {
-                const networkResponse = await fetch(`${API_SERVER_ROOT}/surah`);
-                const parsedJSONData = await networkResponse.json();
-                if(parsedJSONData.code === 200) {
-                    GlobalAppState.surahCacheList = parsedJSONData.data;
-                    renderSurahSelectionSidebar(GlobalAppState.surahCacheList);
+                const response = await fetch(`${API_ENDPOINT_URL_ROOT}/surah`);
+                const parsedResult = await response.json();
+                if(parsedResult.code === 200) {
+                    AppState.surahCacheIndexList = parsedResult.data;
+                    renderSurahSidebarMenuComponent(AppState.surahCacheIndexList);
                 } else { throw new Error(); }
-            } catch(errorLogs) {
-                renderErrorStateDisplay("পবিত্র কুরআনের সূরা তালিকা লোড করা যায়নি। অনুগ্রহ করে পেজটি রিফ্রেশ করুন।");
+            } catch(error) {
+                renderErrorStateToScreenPanel("সূরা ইনডেক্স তালিকা লোড করা সম্ভব হয়নি। পেজটি রিফ্রেশ করুন।");
             }
         }
 
-        // Convert standard counter digits strings to localized Bengali character values mapping
-        function parseToBenglaNumeral(digitInput) {
-            const localizedDigitsMap = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-            return digitInput.toString().split('').map(char => localizedDigitsMap[char] || char).join('');
+        function mapToBengaliNumeralString(digitString) {
+            const digitsBengaliArray = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return digitString.toString().split('').map(character => digitsBengaliArray[character] || character).join('');
         }
 
-        // Render Sidebar Elements items index view panel list components markup mapping loops
-        function renderSurahSelectionSidebar(surahArray) {
-            const listTargetWrapperNode = document.getElementById('surahListElement');
-            listTargetWrapperNode.innerHTML = '';
+        function renderSurahSidebarMenuComponent(surahDataArray) {
+            const containerNode = document.getElementById('sidebarListWrapper');
+            containerNode.innerHTML = '';
 
-            if(surahArray.length === 0) {
-                listTargetWrapperNode.innerHTML = `<p class="text-xs font-semibold text-[var(--text-muted)] text-center py-6 bangla-text">কোনো সূরা পাওয়া যায়নি</p>`;
+            if(surahDataArray.length === 0) {
+                containerNode.innerHTML = `<p class="text-xs font-semibold text-[var(--text-muted)] text-center py-6 bangla-text">কোনো সূরা মেলেনি</p>`;
                 return;
             }
 
-            surahArray.forEach(surahItem => {
-                const isSelectedActiveSurah = GlobalAppState.currentActiveSurah && GlobalAppState.currentActiveSurah.number === surahItem.number;
-                const dynamicStatusClasses = isSelectedActiveSurah ? 'border-[var(--accent-gold)] bg-[var(--bg-elevated)] shadow-md' : 'border-[var(--border)] hover:bg-[var(--bg-elevated)]/30';
+            surahDataArray.forEach(surah => {
+                const isCurrentActive = AppState.currentSurahContextObj && AppState.currentSurahContextObj.number === surah.number;
+                const dynamicSelectionBorderClasses = isCurrentActive ? 'border-[var(--accent-gold)] bg-[var(--bg-elevated)] shadow-md' : 'border-[var(--border)] hover:bg-[var(--bg-elevated)]/30';
 
-                const customItemBlockMarkup = `
-                    <div onclick="loadSelectedSurahContext(${surahItem.number})" class="bg-[var(--bg-card)] border p-3 rounded-xl flex items-center justify-between cursor-pointer transition duration-200 ease-out ${dynamicStatusClasses}">
+                const cardItemMarkup = `
+                    <div onclick="fetchAndLoadSurahDataPackage(${surah.number})" class="bg-[var(--bg-card)] border p-3 rounded-xl flex items-center justify-between cursor-pointer transition duration-150 ease-out ${dynamicSelectionBorderClasses}">
                         <div class="flex items-center gap-3">
-                            <span class="text-xs font-bold text-[var(--accent-gold)] bg-[var(--bg-deep)] w-7 h-7 rounded-lg flex items-center justify-center border border-[var(--border)] font-mono">${parseToBenglaNumeral(surahItem.number)}</span>
+                            <span class="text-xs font-bold text-[var(--accent-gold)] bg-[var(--bg-deep)] w-7 h-7 rounded-lg flex items-center justify-center border border-[var(--border)] font-mono">${mapToBengaliNumeralString(surah.number)}</span>
                             <div>
-                                <h4 class="text-xs font-bold text-[var(--text-primary)] tracking-wide">${surahItem.englishNameTranslation}</h4>
-                                <p class="text-[10px] text-[var(--text-muted)] font-medium mt-0.5">${surahItem.englishName} • আয়াত ${parseToBenglaNumeral(surahItem.numberOfAyahs)}</p>
+                                <h4 class="text-xs font-bold text-[var(--text-primary)] tracking-wide">${surah.englishNameTranslation}</h4>
+                                <p class="text-[10px] text-[var(--text-muted)] font-medium mt-0.5">${surah.englishName} • আয়াত ${mapToBengaliNumeralString(surah.numberOfAyahs)}</p>
                             </div>
                         </div>
                         <div class="text-right">
-                            <h5 class="arabic-text text-base font-bold text-[var(--accent-gold)]">${surahItem.name}</h5>
-                            <span class="inline-block text-[8px] px-1.5 py-0.5 rounded-md font-bold mt-1 ${surahItem.revelationType === 'Meccan' ? 'bg-amber-500/10 text-amber-500' : 'bg-emerald-500/10 text-emerald-500'}">${surahItem.revelationType === 'Meccan' ? 'মাক্কী' : 'মাদানী'}</span>
+                            <h5 class="arabic-text text-base font-bold text-[var(--accent-gold)]">${surah.name}</h5>
+                            <span class="inline-block text-[8px] px-1.5 py-0.5 rounded-md font-bold mt-1 ${surah.revelationType === 'Meccan' ? 'bg-amber-500/10 text-amber-500' : 'bg-emerald-500/10 text-emerald-500'}">${surah.revelationType === 'Meccan' ? 'মাক্কী' : 'মাদানী'}</span>
                         </div>
                     </div>
                 `;
-                listTargetWrapperNode.insertAdjacentHTML('beforeend', customItemBlockMarkup);
+                containerNode.insertAdjacentHTML('beforeend', cardItemMarkup);
             });
         }
 
-        // Live text filters search indexing engine mapping layer logic execution function
-        function filterSurahSearch(searchQueryString) {
-            GlobalAppState.searchFilterString = searchQueryString.toLowerCase().trim();
-            const filteredArrayResults = GlobalAppState.surahCacheList.filter(surahNode => 
-                surahNode.englishName.toLowerCase().includes(GlobalAppState.searchFilterString) ||
-                surahNode.englishNameTranslation.toLowerCase().includes(GlobalAppState.searchFilterString) ||
-                surahNode.number.toString() === GlobalAppState.searchFilterString
+        function executeLiveSidebarSearch(queryTextValue) {
+            AppState.searchFilterQueryString = queryTextValue.toLowerCase().trim();
+            const filteredResults = AppState.surahCacheIndexList.filter(item => 
+                item.englishName.toLowerCase().includes(AppState.searchFilterQueryString) ||
+                item.englishNameTranslation.toLowerCase().includes(AppState.searchFilterQueryString) ||
+                item.number.toString() === AppState.searchFilterQueryString
             );
-            renderSurahSelectionSidebar(filteredArrayResults);
+            renderSurahSidebarMenuComponent(filteredResults);
         }
 
-        // Layout control responsive handlers for managing mobile views drawer animations switches
-        function openMobileSidebarTab() {
-            document.getElementById('surahSidebar').classList.remove('-translate-x-full');
-            document.getElementById('sidebarBackdrop').classList.remove('hidden');
-            updateNavigationActiveTabUI('surah');
+        function openResponsiveMobileSidebarTab() {
+            document.getElementById('surahSidebarPanel').classList.remove('-translate-x-full');
+            document.getElementById('responsiveSidebarBackdrop').classList.remove('hidden');
+            switchMobileActiveTabIndicatorState('surah');
         }
 
-        function closeMobileSidebar() {
-            document.getElementById('surahSidebar').classList.add('-translate-x-full');
-            document.getElementById('sidebarBackdrop').classList.add('hidden');
-            updateNavigationActiveTabUI(GlobalAppState.activeDashboardViewTab);
+        function closeResponsiveMobileSidebar() {
+            document.getElementById('surahSidebarPanel').classList.add('-translate-x-full');
+            document.getElementById('responsiveSidebarBackdrop').classList.add('hidden');
+            switchMobileActiveTabIndicatorState(AppState.activeNavigationTab);
         }
 
-        function switchToMainReaderTab() {
-            closeMobileSidebar();
-            GlobalAppState.activeDashboardViewTab = 'read';
-            updateNavigationActiveTabUI('read');
-            if(GlobalAppState.currentActiveSurah) drawSurahViewerCanvas();
+        function navigateToReaderMainDashboard() {
+            closeResponsiveMobileSidebar();
+            AppState.activeNavigationTab = 'read';
+            switchMobileActiveTabIndicatorState('read');
+            if(AppState.currentSurahContextObj) drawActiveSurahCanvasScreen();
         }
 
-        // Main entry query fetch processor orchestrates download pipelines mapping data layers
-        async function loadSelectedSurahContext(surahIdentifierID, explicitAyahIndexOffset = 0) {
-            closeMobileSidebar();
-            renderLoadingStateDisplay();
+        async function fetchAndLoadSurahDataPackage(surahNumberIdCode, targetVerseIndexOffset = 0) {
+            closeResponsiveMobileSidebar();
+            renderWorkspaceLoadingPlaceholderState();
             
             try {
-                const [arabicAudioStreamResponse, banglaTranslationResponse] = await Promise.all([
-                    fetch(`${API_SERVER_ROOT}/surah/${surahIdentifierID}/${GlobalAppState.activeReciterEdition}`),
-                    fetch(`${API_SERVER_ROOT}/surah/${surahIdentifierID}/bn.bengali`)
+                const [arabicDataResponse, bengaliTranslationResponse] = await Promise.all([
+                    fetch(`${API_ENDPOINT_URL_ROOT}/surah/${surahNumberIdCode}/${AppState.activeReciterIdString}`),
+                    fetch(`${API_ENDPOINT_URL_ROOT}/surah/${surahNumberIdCode}/bn.bengali`)
                 ]);
 
-                const formattedArabicJSON = await arabicAudioStreamResponse.json();
-                const formattedBanglaJSON = await banglaTranslationResponse.json();
+                const parsedArabicJSON = await arabicDataResponse.json();
+                const parsedBengaliJSON = await bengaliTranslationResponse.json();
 
-                if(formattedArabicJSON.code === 200 && formattedBanglaJSON.code === 200) {
-                    GlobalAppState.currentActiveSurah = formattedArabicJSON.data;
+                if(parsedArabicJSON.code === 200 && parsedBengaliJSON.code === 200) {
+                    AppState.currentSurahContextObj = parsedArabicJSON.data;
                     
-                    // Injection mapping loops structural parameters context
-                    GlobalAppState.currentActiveSurah.ayahs.forEach((ayahNode, loopIndex) => {
-                        ayahNode.banglaTranslationText = formattedBanglaJSON.data.ayahs[loopIndex].text;
+                    AppState.currentSurahContextObj.ayahs.forEach((verseItemNode, indexPointer) => {
+                        verseItemNode.banglaTranslationStringText = parsedBengaliJSON.data.ayahs[indexPointer].text;
                     });
 
-                    GlobalAppState.currentAyahPointerIndex = explicitAyahIndexOffset;
-                    GlobalAppState.activeDashboardViewTab = 'read';
+                    AppState.currentAyahActiveIndex = targetVerseIndexOffset;
+                    AppState.activeNavigationTab = 'read';
                     
-                    updateNavigationActiveTabUI('read');
-                    drawSurahViewerCanvas();
-                    refreshGlobalPlayerMetadataDisplayCard();
+                    switchMobileActiveTabIndicatorState('read');
+                    drawActiveSurahCanvasScreen();
+                    refreshGlobalFooterAudioDeckMetadata();
                     
-                    // Persistent location tracking save step
                     localStorage.setItem('quran_last_position', JSON.stringify({
-                        surah: surahIdentifierID,
-                        ayahIndex: explicitAyahIndexOffset
+                        surah: surahNumberIdCode,
+                        ayahIndex: targetVerseIndexOffset
                     }));
 
-                    // Re-render sidebar list elements profiles state to paint updated selection highlighting
-                    renderSurahSelectionSidebar(GlobalAppState.surahCacheList.filter(node => 
-                        node.englishName.toLowerCase().includes(GlobalAppState.searchFilterString) ||
-                        node.englishNameTranslation.toLowerCase().includes(GlobalAppState.searchFilterString)
+                    renderSurahSidebarMenuComponent(AppState.surahCacheIndexList.filter(node => 
+                        node.englishName.toLowerCase().includes(AppState.searchFilterQueryString) ||
+                        node.englishNameTranslation.toLowerCase().includes(AppState.searchFilterQueryString)
                     ));
 
                 } else { throw new Error(); }
-            } catch(networkErrors) {
-                renderErrorStateDisplay("পবিত্র সূরার আয়াতসমূহ ডাউনলোড করতে সমস্যা হয়েছে। ইন্টারনেট চেক করে আবার চেষ্টা করুন।", () => loadSelectedSurahContext(surahIdentifierID, explicitAyahIndexOffset));
+            } catch(error) {
+                renderErrorStateToScreenPanel("পবিত্র সূরার ডেটা ডাউনলোড করা সম্ভব হয়নি। ইন্টারনেট কানেকশন চেক করুন।", () => fetchAndLoadSurahDataPackage(surahNumberIdCode, targetVerseIndexOffset));
             }
         }
 
-        // Shimmer loading card injection mapping layout functions 
-        function renderLoadingStateDisplay() {
-            document.getElementById('mainCoreViewer').innerHTML = `
+        function renderWorkspaceLoadingPlaceholderState() {
+            document.getElementById('coreWorkspaceContainer').innerHTML = `
                 <div class="space-y-4 max-w-4xl mx-auto">
-                    <div class="shimmer h-28 rounded-2xl w-full opacity-10"></div>
-                    <div class="shimmer h-44 rounded-2xl w-full opacity-10"></div>
-                    <div class="shimmer h-44 rounded-2xl w-full opacity-10"></div>
+                    <div class="shimmer h-24 rounded-2xl w-full opacity-10"></div>
+                    <div class="shimmer h-40 rounded-2xl w-full opacity-10"></div>
+                    <div class="shimmer h-40 rounded-2xl w-full opacity-10"></div>
                 </div>`;
         }
 
-        function renderErrorStateDisplay(errorMessageString, runtimeRetryFunctionCallback = null) {
-            document.getElementById('mainCoreViewer').innerHTML = `
+        function renderErrorStateToScreenPanel(errorMessageText, runtimeRetryCallbackFunction = null) {
+            document.getElementById('coreWorkspaceContainer').innerHTML = `
                 <div class="text-center py-24 px-4 text-red-400 bangla-text max-w-md mx-auto">
                     <i class="fa-solid fa-triangle-exclamation text-4xl mb-4 text-amber-500"></i>
-                    <p class="font-medium text-sm leading-relaxed">${errorMessageString}</p>
-                    ${runtimeRetryFunctionCallback ? `<button onclick="(${runtimeRetryFunctionCallback.toString()})()" class="mt-5 px-5 py-2.5 bg-gradient-to-r from-[var(--accent-gold)] to-amber-400 text-slate-950 font-bold rounded-xl text-xs hover:brightness-110 active:scale-95 transition shadow-lg cursor-pointer">আবার চেষ্টা করুন</button>` : ''}
+                    <p class="font-medium text-sm leading-relaxed">${errorMessageText}</p>
+                    ${runtimeRetryCallbackFunction ? `<button onclick="(${runtimeRetryCallbackFunction.toString()})()" class="mt-5 px-5 py-2.5 bg-gradient-to-r from-[var(--accent-gold)] to-amber-400 text-slate-950 font-bold rounded-xl text-xs hover:brightness-110 active:scale-95 transition shadow-lg cursor-pointer">পুনরায় চেষ্টা করুন</button>` : ''}
                 </div>`;
         }
 
-        // Render data stream contents view layers out into workspace structural boxes area
-        function drawSurahViewerCanvas() {
-            const viewportTargetContainerNode = document.getElementById('mainCoreViewer');
-            viewportTargetContainerNode.innerHTML = '';
+        function drawActiveSurahCanvasScreen() {
+            const viewportContainerElementNode = document.getElementById('coreWorkspaceContainer');
+            viewportContainerElementNode.innerHTML = '';
 
-            const activeSurahContext = GlobalAppState.currentActiveSurah;
+            const activeSurah = AppState.currentSurahContextObj;
 
-            // Header Meta Card Component Block
-            const headerBannerMarkup = `
-                <div class="bg-[var(--bg-card)] border border-[var(--border)] p-6 rounded-2xl text-center relative overflow-hidden mb-6 max-w-4xl mx-auto shadow-md">
-                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 text-[var(--accent-gold)] arabic-text select-none">${activeSurahContext.name}</div>
-                    <h2 class="arabic-text text-4xl font-bold text-[var(--accent-gold)] mb-1.5">${activeSurahContext.name}</h2>
-                    <h3 class="text-base font-bold tracking-wide bangla-text text-[var(--text-primary)]">${activeSurahContext.englishNameTranslation} <span class="text-xs text-[var(--text-muted)] font-normal font-mono">(${activeSurahContext.englishName})</span></h3>
+            const headerComponentMarkup = `
+                <div class="bg-[var(--bg-card)] border border-[var(--border)] p-6 rounded-2xl text-center relative overflow-hidden mb-6 max-w-4xl mx-auto shadow-sm">
+                    <div class="absolute -right-6 -top-6 text-7xl opacity-5 text-[var(--accent-gold)] arabic-text select-none">${activeSurah.name}</div>
+                    <h2 class="arabic-text text-4xl font-bold text-[var(--accent-gold)] mb-1.5">${activeSurah.name}</h2>
+                    <h3 class="text-base font-bold tracking-wide bangla-text text-[var(--text-primary)]">${activeSurah.englishNameTranslation} <span class="text-xs text-[var(--text-muted)] font-normal font-mono">(${activeSurah.englishName})</span></h3>
                     <p class="text-[10px] text-[var(--text-muted)] mt-1.5 font-medium bg-[var(--bg-deep)] border border-[var(--border)] inline-block px-3 py-1 rounded-full bangla-text">
-                        পবিত্র অবতীর্ণ: ${activeSurahContext.revelationType === 'Meccan' ? 'মাক্কী' : 'মাদানী'} • মোট আয়াত: ${parseToBenglaNumeral(activeSurahContext.numberOfAyahs)}
+                        পবিত্র অবতীর্ণ: ${activeSurah.revelationType === 'Meccan' ? 'মাক্কী' : 'মাদানী'} • মোট আয়াত: ${mapToBengaliNumeralString(activeSurah.numberOfAyahs)}
                     </p>
                 </div>
             `;
-            viewportTargetContainerNode.insertAdjacentHTML('beforeend', headerBannerMarkup);
+            viewportContainerElementNode.insertAdjacentHTML('beforeend', headerComponentMarkup);
 
-            // Conditional Bismillah Graphics insertion processing loop
-            if(activeSurahContext.number !== 9) {
-                const bismillahDisplayBlock = `
-                    <div class="text-center py-6 text-2xl md:text-3xl font-bold arabic-text text-[var(--text-primary)] select-none opacity-95 tracking-normal">
+            if(activeSurah.number !== 9) {
+                const bismillahHeaderBlock = `
+                    <div class="text-center py-6 text-2xl md:text-3xl font-bold arabic-text text-[var(--text-primary)] select-none opacity-90">
                         بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                     </div>
                 `;
-                viewportTargetContainerNode.insertAdjacentHTML('beforeend', bismillahDisplayBlock);
+                viewportContainerElementNode.insertAdjacentHTML('beforeend', bismillahHeaderBlock);
             }
 
-            // Route execution streams to render modes
-            if(GlobalAppState.displayReadingMode === 'ayah') {
-                // Individual Flex Card layout modes loop mappings logic
-                activeSurahContext.ayahs.forEach((ayahNode, verseLoopIndex) => {
-                    let textArabicBuffer = ayahNode.text;
-                    
-                    // Remove initial global bismillah strings from inner text rendering layers if duplication patterns match
-                    if(activeSurahContext.number !== 1 && activeSurahContext.number !== 9 && verseLoopIndex === 0) {
-                        textArabicBuffer = textArabicBuffer.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "").trim();
-                        if(textArabicBuffer === '') textArabicBuffer = ayahNode.text;
+            if(AppState.displayReadingMode === 'ayah') {
+                activeSurah.ayahs.forEach((verseObj, index) => {
+                    let processedArabicText = verseObj.text;
+                    if(activeSurah.number !== 1 && activeSurah.number !== 9 && index === 0) {
+                        processedArabicText = processedArabicText.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "").trim();
+                        if(processedArabicText === '') processedArabicText = verseObj.text;
                     }
 
-                    const checkBookmarkStatus = GlobalAppState.userSavedBookmarks.some(bookmarkRecord => bookmarkRecord.surah === activeSurahContext.number && bookmarkRecord.ayah === ayahNode.numberInSurah);
-                    const dynamicBookmarkColorClass = checkBookmarkStatus ? 'text-amber-400' : 'text-[var(--text-muted)] hover:text-[var(--accent-gold)]';
+                    const checkBookmarkState = AppState.userSavedBookmarksList.some(record => record.surah === activeSurah.number && record.ayah === verseObj.numberInSurah);
+                    const bookmarkActiveIconColorClass = checkBookmarkState ? 'text-amber-400' : 'text-[var(--text-muted)] hover:text-[var(--accent-gold)]';
 
-                    const isCurrentlyPlayingThisAyah = GlobalAppState.isPlayingState && verseLoopIndex === GlobalAppState.currentAyahPointerIndex;
+                    const isTargetVerseCurrentlyPlaying = AppState.isPlaying && index === AppState.currentAyahActiveIndex;
 
-                    const verseCardBlockMarkup = `
-                        <div id="verse-card-node-${verseLoopIndex}" class="bg-[var(--bg-card)] border border-[var(--border)] p-4 md:p-6 rounded-2xl transition-all duration-300 flex flex-col gap-4 max-w-4xl mx-auto shadow-sm group ${verseLoopIndex === GlobalAppState.currentAyahPointerIndex ? 'ayah-card-active' : ''}">
+                    const verseCardMarkup = `
+                        <div id="verse-card-block-${index}" class="bg-[var(--bg-card)] border border-[var(--border)] p-4 md:p-6 rounded-2xl flex flex-col gap-4 max-w-4xl mx-auto shadow-sm transition-all duration-300">
                             <div class="flex items-center justify-between border-b border-[var(--border)] pb-3">
-                                <div class="ayah-octagon text-xs font-mono">${parseToBenglaNumeral(ayahNode.numberInSurah)}</div>
+                                <div id="octagon-badge-${index}" class="ayah-octagon text-xs font-mono ${index === AppState.currentAyahActiveIndex ? 'active-octagon' : ''}">${mapToBengaliNumeralString(verseObj.numberInSurah)}</div>
                                 <div class="flex items-center gap-0.5 bg-[var(--bg-deep)] border border-[var(--border)] rounded-xl p-0.5">
-                                    <button onclick="triggerTargetVersePlayAudio(${verseLoopIndex})" class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--accent-gold)] hover:bg-[var(--bg-elevated)] transition cursor-pointer" title="প্লে করুন">
-                                        <i class="fa-solid ${isCurrentlyPlayingThisAyah ? 'fa-pause text-[var(--accent-emerald)]' : 'fa-play'}"></i>
+                                    <button onclick="triggerTargetVerseAudioTrackPlayback(${index})" class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--accent-gold)] hover:bg-[var(--bg-elevated)] transition cursor-pointer touch-target" title="প্লে">
+                                        <i class="fa-solid ${isTargetVerseCurrentlyPlaying ? 'fa-pause text-[var(--accent-emerald)]' : 'fa-play'}"></i>
                                     </button>
-                                    <button onclick="copyVerseToClipboardData(${activeSurahContext.number}, ${ayahNode.numberInSurah}, ${verseLoopIndex})" class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition cursor-pointer" title="কপি">
+                                    <button onclick="copyVerseDataToSystemClipboard(${activeSurah.number}, ${verseObj.numberInSurah}, ${index})" class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition cursor-pointer touch-target" title="কপি">
                                         <i class="fa-solid fa-copy text-xs"></i>
                                     </button>
-                                    <button onclick="toggleVerseBookmarkPersistence(${activeSurahContext.number}, ${ayahNode.numberInSurah}, '${activeSurahContext.englishNameTranslation}')" class="w-9 h-9 flex items-center justify-center rounded-lg ${dynamicBookmarkColorClass} transition cursor-pointer" title="বুকমার্ক">
+                                    <button onclick="toggleVerseBookmarkPersistenceStorage(${activeSurah.number}, ${verseObj.numberInSurah}, '${activeSurah.englishNameTranslation}')" class="w-9 h-9 flex items-center justify-center rounded-lg ${bookmarkActiveIconColorClass} transition cursor-pointer touch-target" title="বুকমার্ক">
                                         <i class="fa-solid fa-bookmark text-xs"></i>
                                     </button>
-                                    <button onclick="shareVerseNativeWebShareAPI(${activeSurahContext.number}, ${ayahNode.numberInSurah}, ${verseLoopIndex})" class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition cursor-pointer" title="শেয়ার">
+                                    <button onclick="shareVerseContextViaWebAPI(${activeSurah.number}, ${verseObj.numberInSurah}, ${index})" class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition cursor-pointer touch-target" title="শেয়ার">
                                         <i class="fa-solid fa-share-nodes text-xs"></i>
                                     </button>
                                 </div>
                             </div>
-                            <div class="arabic-text text-right leading-[2.3] font-medium tracking-wide" style="font-size: ${GlobalAppState.arabicTextFontSize}">
-                                ${textArabicBuffer}
+                            <div id="arabic-text-render-node-${index}" class="arabic-text text-right leading-[2.3] tracking-wide ${index === AppState.currentAyahActiveIndex ? 'active-text-arabic' : 'text-[var(--text-primary)]'}" style="font-size: ${AppState.arabicPhraseTextFontSize}">
+                                ${processedArabicText}
                             </div>
-                            <div class="bangla-text text-left text-xs md:text-sm text-[var(--text-primary)] font-normal border-t border-dashed border-[var(--border)] pt-3.5 leading-relaxed tracking-normal opacity-90">
-                                ${ayahNode.banglaTranslationText}
+                            <div id="bangla-text-render-node-${index}" class="bangla-text text-left text-xs md:text-sm border-t border-dashed border-[var(--border)] pt-3.5 leading-relaxed tracking-normal ${index === AppState.currentAyahActiveIndex ? 'active-text-bangla' : 'text-[var(--text-primary)] opacity-85'}">
+                                ${verseObj.banglaTranslationStringText}
                             </div>
                         </div>
                     `;
-                    viewportTargetContainerNode.insertAdjacentHTML('beforeend', verseCardBlockMarkup);
+                    viewportContainerElementNode.insertAdjacentHTML('beforeend', verseCardMarkup);
                 });
             } else {
-                // Continuous Paragraph flow text stream page layout display rendering mode logic
-                let continuousPageBlockMarkup = `<div class="bg-[var(--bg-card)] border border-[var(--border)] p-5 md:p-8 rounded-2xl flex flex-col gap-6 max-w-4xl mx-auto shadow-md">`;
+                let paragraphViewLayoutBlockMarkup = `<div class="bg-[var(--bg-card)] border border-[var(--border)] p-5 md:p-8 rounded-2xl flex flex-col gap-6 max-w-4xl mx-auto shadow-sm">`;
                 
-                continuousPageBlockMarkup += `<div class="arabic-text text-justify leading-[2.6] tracking-wide" style="font-size: ${GlobalAppState.arabicTextFontSize}">`;
-                activeSurahContext.ayahs.forEach((ayahNode, verseLoopIndex) => {
-                    let textArabicBuffer = ayahNode.text;
-                    if(activeSurahContext.number !== 1 && activeSurahContext.number !== 9 && verseLoopIndex === 0) {
-                        textArabicBuffer = textArabicBuffer.replace("بِسْمِ اللَّهِ الرَّহْمَٰنِ الرَّحِيمِ", "").trim();
+                paragraphViewLayoutBlockMarkup += `<div class="arabic-text text-justify leading-[2.6] tracking-wide" style="font-size: ${AppState.arabicPhraseTextFontSize}">`;
+                activeSurah.ayahs.forEach((verseObj, index) => {
+                    let processedArabicText = verseObj.text;
+                    if(activeSurah.number !== 1 && activeSurah.number !== 9 && index === 0) {
+                        processedArabicText = processedArabicText.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "").trim();
                     }
                     
-                    const isInlineVerseActive = verseLoopIndex === GlobalAppState.currentAyahPointerIndex;
-                    const inlineHighlighterClasses = isInlineVerseActive ? 'text-[var(--accent-gold)] font-bold underline underline-offset-8 decoration-2 bg-[var(--bg-elevated)] px-1.5 rounded-md shadow-sm' : 'text-[var(--text-primary)] hover:text-[var(--accent-gold)]';
+                    const isInlineHighlightActive = index === AppState.currentAyahActiveIndex;
+                    const dynamicInlineStylesClasses = isInlineHighlightActive ? 'active-text-arabic font-bold font-semibold' : 'text-[var(--text-primary)] hover:text-[var(--accent-gold)]';
 
-                    continuousPageBlockMarkup += `<span id="inline-text-pointer-${verseLoopIndex}" class="cursor-pointer transition duration-150 inline p-0.5 rounded ${inlineHighlighterClasses}" onclick="triggerTargetVersePlayAudio(${verseLoopIndex})">${textArabicBuffer} <span class="text-xs text-[var(--accent-gold)] mx-1 font-mono font-bold">﴿${parseToBenglaNumeral(ayahNode.numberInSurah)}﴾</span></span> `;
+                    paragraphViewLayoutBlockMarkup += `<span id="inline-arabic-span-${index}" class="cursor-pointer transition duration-150 inline p-0.5 rounded ${dynamicInlineStylesClasses}" onclick="triggerTargetVerseAudioTrackPlayback(${index})">${processedArabicText} <span class="text-xs text-[var(--accent-gold)] mx-1 font-mono font-bold">﴿${mapToBengaliNumeralString(verseObj.numberInSurah)}﴾</span></span> `;
                 });
-                continuousPageBlockMarkup += `</div>`;
+                paragraphViewLayoutBlockMarkup += `</div>`;
 
-                continuousPageBlockMarkup += `<div class="bangla-text text-left text-xs md:text-sm border-t border-[var(--border)] pt-6 space-y-4 text-justify leading-relaxed">`;
-                activeSurahContext.ayahs.forEach((ayahNode, verseLoopIndex) => {
-                    continuousPageBlockMarkup += `
-                        <p class="p-2 rounded-xl transition ${verseLoopIndex === GlobalAppState.currentAyahPointerIndex ? 'bg-[var(--bg-elevated)] border border-[var(--border)] font-medium shadow-sm' : 'text-[var(--text-muted)]'}">
-                            <b class="text-[var(--accent-gold)] font-mono mr-1">${parseToBenglaNumeral(ayahNode.numberInSurah)}.</b> ${ayahNode.banglaTranslationText}
+                paragraphViewLayoutBlockMarkup += `<div class="bangla-text text-left text-xs md:text-sm border-t border-[var(--border)] pt-6 space-y-4 text-justify leading-relaxed">`;
+                activeSurah.ayahs.forEach((verseObj, index) => {
+                    paragraphViewLayoutBlockMarkup += `
+                        <p id="inline-bangla-paragraph-${index}" class="p-1 rounded-xl transition ${index === AppState.currentAyahActiveIndex ? 'active-text-bangla' : 'text-[var(--text-muted)]'}">
+                            <b class="text-[var(--accent-gold)] font-mono mr-1">${mapToBengaliNumeralString(verseObj.numberInSurah)}.</b> ${verseObj.banglaTranslationStringText}
                         </p>`;
                 });
-                continuousPageBlockMarkup += `</div></div>`;
+                paragraphViewLayoutBlockMarkup += `</div></div>`;
 
-                viewportTargetContainerNode.insertAdjacentHTML('beforeend', continuousPageBlockMarkup);
+                viewportContainerElementNode.insertAdjacentHTML('beforeend', paragraphViewLayoutBlockMarkup);
             }
 
-            executeAutoCenterScrollAnimation();
+            executeAutoScrollingAnimationToCenterView();
         }
 
-        // Bookmark dashboard display rendering processor logic function module component
-        function renderUserBookmarksDashboard() {
-            closeMobileSidebar();
-            GlobalAppState.activeDashboardViewTab = 'bookmark';
-            updateNavigationActiveTabUI('bookmark');
+        function loadUserBookmarksDashboardPage() {
+            closeResponsiveMobileSidebar();
+            AppState.activeNavigationTab = 'bookmark';
+            switchMobileActiveTabIndicatorState('bookmark');
 
-            const viewerWrapperNode = document.getElementById('mainCoreViewer');
-            viewerWrapperNode.innerHTML = `
+            const containerNode = document.getElementById('coreWorkspaceContainer');
+            containerNode.innerHTML = `
                 <div class="bg-[var(--bg-card)] border border-[var(--border)] p-4 rounded-xl mb-4 flex items-center justify-between bangla-text max-w-xl mx-auto shadow-sm">
                     <h2 class="text-sm font-bold text-[var(--accent-gold)]"><i class="fa-solid fa-bookmark mr-2"></i>সংরক্ষিত বুকমার্কসমূহ</h2>
-                    <span class="text-[10px] bg-[var(--bg-deep)] border border-[var(--border)] text-[var(--text-muted)] font-bold px-2.5 py-1 rounded-full">মোট: ${parseToBenglaNumeral(GlobalAppState.userSavedBookmarks.length)}</span>
+                    <span class="text-[10px] bg-[var(--bg-deep)] border border-[var(--border)] text-[var(--text-muted)] font-bold px-2.5 py-1 rounded-full">মোট: ${mapToBengaliNumeralString(AppState.userSavedBookmarksList.length)}</span>
                 </div>
             `;
 
-            if(GlobalAppState.userSavedBookmarks.length === 0) {
-                viewerWrapperNode.insertAdjacentHTML('beforeend', `
+            if(AppState.userSavedBookmarksList.length === 0) {
+                containerNode.insertAdjacentHTML('beforeend', `
                     <div class="text-center py-20 text-[var(--text-muted)] bangla-text max-w-sm mx-auto">
-                        <i class="fa-solid fa-bookmark opacity-20 text-5xl mb-3"></i>
-                        <p class="text-xs font-medium">কোনো আয়াত বুকমার্ক লিস্টে পাওয়া যায়নি। আয়াত পড়ার সময় বুকমার্ক আইকনে ক্লিক করে সংরক্ষণ করুন।</p>
+                        <i class="fa-solid fa-bookmark opacity-10 text-5xl mb-3"></i>
+                        <p class="text-xs font-medium">কোনো আয়াত বুকমার্ক তালিকায় পাওয়া যায়নি। আয়াত পড়ার সময় বুকমার্ক আইকনে ক্লিক করুন।</p>
                     </div>`);
                 return;
             }
 
-            GlobalAppState.userSavedBookmarks.forEach(bookmarkItem => {
-                const bookmarkCardMarkup = `
-                    <div class="bg-[var(--bg-card)] border border-[var(--border)] p-4 rounded-xl mb-3 flex items-center justify-between gap-4 hover:border-[var(--accent-gold)] transition duration-200 max-w-xl mx-auto shadow-sm bangla-text">
+            AppState.userSavedBookmarksList.forEach(bookmark => {
+                const cardMarkup = `
+                    <div class="bg-[var(--bg-card)] border border-[var(--border)] p-4 rounded-xl mb-3 flex items-center justify-between gap-4 hover:border-[var(--accent-gold)] transition duration-150 max-w-xl mx-auto shadow-sm bangla-text">
                         <div>
-                            <h4 class="text-xs font-bold text-[var(--text-primary)]">সূরা ${bookmarkItem.surahName}</h4>
-                            <p class="text-[10px] text-[var(--text-muted)] font-medium mt-0.5">আয়াত নম্বর: ${parseToBenglaNumeral(bookmarkItem.ayah)}</p>
+                            <h4 class="text-xs font-bold text-[var(--text-primary)]">সূরা ${bookmark.surahName}</h4>
+                            <p class="text-[10px] text-[var(--text-muted)] font-medium mt-0.5">আয়ান নম্বর: ${mapToBengaliNumeralString(bookmark.ayah)}</p>
                         </div>
                         <div class="flex items-center gap-1.5">
-                            <button onclick="loadSelectedSurahContext(${bookmarkItem.surah}, ${bookmarkItem.ayah - 1})" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 font-bold text-slate-950 rounded-lg text-[10px] shadow-sm transition cursor-pointer">পড়ুন</button>
-                            <button onclick="toggleVerseBookmarkPersistence(${bookmarkItem.surah}, ${bookmarkItem.ayah}, '')" class="w-8 h-8 flex items-center justify-center text-red-400 bg-[var(--bg-deep)] border border-[var(--border)] rounded-lg hover:bg-red-500/10 transition cursor-pointer"><i class="fa-solid fa-trash-can text-xs"></i></button>
+                            <button onclick="fetchAndLoadSurahDataPackage(${bookmark.surah}, ${bookmark.ayah - 1})" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 font-bold text-slate-950 rounded-lg text-[10px] shadow-sm transition cursor-pointer touch-target">পড়ুন</button>
+                            <button onclick="toggleVerseBookmarkPersistenceStorage(${bookmark.surah}, ${bookmark.ayah}, '')" class="w-8 h-8 flex items-center justify-center text-red-400 bg-[var(--bg-deep)] border border-[var(--border)] rounded-lg hover:bg-red-500/10 transition cursor-pointer touch-target"><i class="fa-solid fa-trash-can text-xs"></i></button>
                         </div>
                     </div>
                 `;
-                viewerWrapperNode.insertAdjacentHTML('beforeend', bookmarkCardMarkup);
+                containerNode.insertAdjacentHTML('beforeend', cardMarkup);
             });
         }
 
-        // Advanced Configuration Control panel dashboard rendering display panel logic function
-        function openCustomSettingsViewPage() {
-            closeMobileSidebar();
-            GlobalAppState.activeDashboardViewTab = 'settings';
-            updateNavigationActiveTabUI('settings');
+        function loadAppSettingsViewDashboardPage() {
+            closeResponsiveMobileSidebar();
+            AppState.activeNavigationTab = 'settings';
+            switchMobileActiveTabIndicatorState('settings');
 
-            const viewerWrapperNode = document.getElementById('mainCoreViewer');
-            const parsedFontSizeValue = parseFloat(GlobalAppState.arabicTextFontSize);
+            const containerNode = document.getElementById('coreWorkspaceContainer');
+            const parsedFontSize = parseFloat(AppState.arabicPhraseTextFontSize);
 
-            viewerWrapperNode.innerHTML = `
-                <div class="bg-[var(--bg-card)] border border-[var(--border)] p-5 rounded-2xl max-w-md mx-auto shadow-md bangla-text space-y-5">
-                    <h2 class="text-sm font-bold text-[var(--accent-gold)] border-b border-[var(--border)] pb-3"><i class="fa-solid fa-sliders mr-2"></i>অ্যাপ্লিকেশন সেটিংস</h2>
+            containerNode.innerHTML = `
+                <div class="bg-[var(--bg-card)] border border-[var(--border)] p-5 rounded-2xl max-w-md mx-auto shadow-sm bangla-text space-y-5">
+                    <h2 class="text-sm font-bold text-[var(--accent-gold)] border-b border-[var(--border)] pb-3"><i class="fa-solid fa-sliders mr-2"></i>সেটিংস প্যানেল</h2>
                     
                     <div class="space-y-2">
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-medium text-[var(--text-primary)]">আরবি ফন্ট সাইজ কন্ট্রোল</span>
-                            <span id="fontSizeDisplayIndicator" class="font-bold font-mono text-[var(--accent-gold)]">${parsedFontSizeValue}rem</span>
+                            <span class="font-medium text-[var(--text-primary)]">আরবি ফন্ট সাইজ টিউনিং</span>
+                            <span id="settingsPanelFontSizeLabel" class="font-bold font-mono text-[var(--accent-gold)]">${parsedFontSize}rem</span>
                         </div>
                         <div class="flex items-center gap-3 bg-[var(--bg-deep)] border border-[var(--border)] p-3 rounded-xl">
                             <i class="fa-solid fa-font text-xs text-[var(--text-muted)]"></i>
-                            <input type="range" id="settingsFontScalerRange" min="1.8" max="3.5" step="0.1" value="${parsedFontSizeValue}" class="flex-1 accent-[var(--accent-gold)] h-1 rounded appearance-none cursor-pointer" oninput="executeLiveTextFontSizeScaling(this.value)">
+                            <input type="range" id="fontSizeRangeSliderComponent" min="1.8" max="3.5" step="0.1" value="${parsedFontSize}" class="flex-1 accent-[var(--accent-gold)] h-1 rounded appearance-none cursor-pointer" oninput="executeLiveFontSizeScalingAdjustments(this.value)">
                             <i class="fa-solid fa-font text-base text-[var(--text-muted)]"></i>
                         </div>
                     </div>
 
                     <div class="md:hidden space-y-4 border-t border-[var(--border)] pt-4">
                         <div class="space-y-2">
-                            <label class="text-xs font-medium text-[var(--text-primary)]">তেলাওয়াত স্পিড (গতি)</label>
-                            <select onchange="updatePlayerSpeedRate(this.value)" class="w-full bg-[var(--bg-deep)] border border-[var(--border)] rounded-xl p-2.5 text-xs text-[var(--text-primary)] focus:outline-none">
-                                <option value="0.75" ${GlobalAppState.audioSpeedPlaybackRate == 0.75 ? 'selected' : ''}>0.75x (ধীর)</option>
-                                <option value="1.0" ${GlobalAppState.audioSpeedPlaybackRate == 1.0 ? 'selected' : ''}>1.0x (স্বাভাবিক)</option>
-                                <option value="1.25" ${GlobalAppState.audioSpeedPlaybackRate == 1.25 ? 'selected' : ''}>1.25x (দ্রুত)</option>
-                                <option value="1.5" ${GlobalAppState.audioSpeedPlaybackRate == 1.5 ? 'selected' : ''}>1.5x</option>
+                            <label class="text-xs font-medium text-[var(--text-primary)]">তেলাওয়াত প্লেব্যাক স্পিড</label>
+                            <select onchange="adjustAudioPlaybackVelocity(this.value)" class="w-full bg-[var(--bg-deep)] border border-[var(--border)] rounded-xl p-2.5 text-xs text-[var(--text-primary)] focus:outline-none">
+                                <option value="0.75" ${AppState.playbackRateSpeedVelocity == 0.75 ? 'selected' : ''}>0.75x (ধীর গতি)</option>
+                                <option value="1.0" ${AppState.playbackRateSpeedVelocity == 1.0 ? 'selected' : ''}>1.0x (স্বাভাবিক)</option>
+                                <option value="1.25" ${AppState.playbackRateSpeedVelocity == 1.25 ? 'selected' : ''}>1.25x (দ্রুত গতি)</option>
+                                <option value="1.5" ${AppState.playbackRateSpeedVelocity == 1.5 ? 'selected' : ''}>1.5x</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="text-[10px] text-[var(--text-muted)] text-center pt-2 font-medium">
-                        কুরআন অ্যাপ সংস্করণ ২.০.০ (প্রিমিয়াম মোবাইল ভিউ সংস্করণ)
                     </div>
                 </div>
             `;
         }
 
-        function executeLiveTextFontSizeScaling(scalingFactorInputValue) {
-            GlobalAppState.arabicTextFontSize = scalingFactorInputValue + 'rem';
-            localStorage.setItem('quran_font_size', GlobalAppState.arabicTextFontSize);
-            const indicatorNode = document.getElementById('fontSizeDisplayIndicator');
-            if(indicatorNode) indicatorNode.innerText = scalingFactorInputValue + 'rem';
+        function executeLiveFontSizeScalingAdjustments(sliderValue) {
+            AppState.arabicPhraseTextFontSize = sliderValue + 'rem';
+            localStorage.setItem('quran_font_size', AppState.arabicPhraseTextFontSize);
+            const labelNode = document.getElementById('settingsPanelFontSizeLabel');
+            if(labelNode) labelNode.innerText = sliderValue + 'rem';
         }
 
-        // Active State bottom application strip class switcher styler management engine module function
-        function updateNavigationActiveTabUI(selectedTabID) {
-            const tabButtonsMap = {
-                surah: document.getElementById('navTabSurah'),
-                read: document.getElementById('navTabRead'),
-                bookmark: document.getElementById('navTabBookmark'),
-                settings: document.getElementById('navTabSettings')
+        function switchMobileActiveTabIndicatorState(activeTabKey) {
+            const tabsMap = {
+                surah: document.getElementById('tabItemSurah'),
+                read: document.getElementById('tabItemRead'),
+                bookmark: document.getElementById('tabItemBookmark'),
+                settings: document.getElementById('tabItemSettings')
             };
 
-            Object.keys(tabButtonsMap).forEach(key => {
-                const node = tabButtonsMap[key];
-                if(!node) return;
-                if(key === selectedTabID) {
-                    node.classList.add('text-[var(--accent-gold)]');
-                    node.classList.remove('text-[var(--text-muted)]');
+            Object.keys(tabsMap).forEach(key => {
+                const elementNode = tabsMap[key];
+                if(!elementNode) return;
+                if(key === activeTabKey) {
+                    elementNode.classList.add('text-[var(--accent-gold)]');
+                    elementNode.classList.remove('text-[var(--text-muted)]');
                 } else {
-                    node.classList.remove('text-[var(--accent-gold)]');
-                    node.classList.add('text-[var(--text-muted)]');
+                    elementNode.classList.remove('text-[var(--accent-gold)]');
+                    elementNode.classList.add('text-[var(--text-muted)]');
                 }
             });
         }
 
-        // Scroll adjustments utility module algorithms execution step
-        function executeAutoCenterScrollAnimation() {
-            if(GlobalAppState.activeDashboardViewTab !== 'read') return;
+        function executeAutoScrollingAnimationToCenterView() {
+            if(AppState.activeNavigationTab !== 'read') return;
             
-            if(GlobalAppState.displayReadingMode === 'ayah') {
-                constTargetNodeElement = document.getElementById(`verse-card-node-${GlobalAppState.currentAyahPointerIndex}`);
-                if(constTargetNodeElement) {
-                    constTargetNodeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+            let targetNode = null;
+            if(AppState.displayReadingMode === 'ayah') {
+                targetNode = document.getElementById(`verse-card-block-${AppState.currentAyahActiveIndex}`);
             } else {
-                constTargetNodeElement = document.getElementById(`inline-text-pointer-${GlobalAppState.currentAyahPointerIndex}`);
-                if(constTargetNodeElement) {
-                    constTargetNodeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+                targetNode = document.getElementById(`inline-arabic-span-${AppState.currentAyahActiveIndex}`);
+            }
+
+            if(targetNode) {
+                targetNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
-        // ---------------- Audio Code Processing Architecture Engines ----------------
-        function initializeSystemAudioListeners() {
-            nativeAudio.addEventListener('timeupdate', () => {
-                if(!nativeAudio.duration) return;
-                const calculatedPercentage = (nativeAudio.currentTime / nativeAudio.duration) * 100;
-                document.getElementById('playerProgressBarSlider').value = calculatedPercentage;
-                document.getElementById('playerCurrentTimeLabel').innerText = formatSecondsToTimerString(nativeAudio.currentTime);
+        // ---------------- High-Speed Audio Stream Management Core Architecture ----------------
+        function setupCoreAudioEngineStateListeners() {
+            coreAudioPlayer.addEventListener('timeupdate', () => {
+                if(!coreAudioPlayer.duration) return;
+                const ratioPercentage = (coreAudioPlayer.currentTime / coreAudioPlayer.duration) * 100;
+                document.getElementById('playerTimelineProgressSlider').value = ratioPercentage;
+                document.getElementById('playerTimerCurrentTime').innerText = convertSecondsToDisplayTimerDigits(coreAudioPlayer.currentTime);
             });
 
-            nativeAudio.addEventListener('loadedmetadata', () => {
-                document.getElementById('playerTotalDurationLabel').innerText = formatSecondsToTimerString(nativeAudio.duration);
+            coreAudioPlayer.addEventListener('loadedmetadata', () => {
+                document.getElementById('playerTimerTotalDuration').innerText = convertSecondsToDisplayTimerDigits(coreAudioPlayer.duration);
             });
 
-            nativeAudio.addEventListener('ended', () => {
-                if(GlobalAppState.isLoopingSingleVerse) {
-                    nativeAudio.currentTime = 0;
-                    nativeAudio.play().catch(() => {});
+            coreAudioPlayer.addEventListener('ended', () => {
+                if(AppState.isLoopingSingleVerse) {
+                    coreAudioPlayer.currentTime = 0;
+                    coreAudioPlayer.play().catch(() => {});
                 } else {
-                    triggerNextAyah();
+                    playNextVerseTrack();
                 }
             });
 
-            nativeAudio.addEventListener('error', () => {
-                GlobalAppState.isPlayingState = false;
-                syncGlobalPlayerMasterButtonUI();
+            coreAudioPlayer.addEventListener('error', () => {
+                AppState.isPlaying = false;
+                syncMasterPlayPauseButtonUI();
             });
         }
 
-        function formatSecondsToTimerString(secondsInputData) {
-            const minutesBuffer = Math.floor(secondsInputData / 60).toString().padStart(2, '0');
-            const secondsBuffer = Math.floor(secondsInputData % 60).toString().padStart(2, '0');
-            return `${minutesBuffer}:${secondsBuffer}`;
+        function convertSecondsToDisplayTimerDigits(secondsData) {
+            const totalMinutes = Math.floor(secondsData / 60).toString().padStart(2, '0');
+            const totalSeconds = Math.floor(secondsData % 60).toString().padStart(2, '0');
+            return `${totalMinutes}:${totalSeconds}`;
         }
 
-        function refreshGlobalPlayerMetadataDisplayCard() {
-            if(!GlobalAppState.currentActiveSurah) return;
-            const surahContext = GlobalAppState.currentActiveSurah;
-            const currentVerseDataNode = surahContext.ayahs[GlobalAppState.currentAyahPointerIndex];
+        function refreshGlobalFooterAudioDeckMetadata() {
+            if(!AppState.currentSurahContextObj) return;
+            const surah = AppState.currentSurahContextObj;
+            const currentVerse = surah.ayahs[AppState.currentAyahActiveIndex];
 
-            document.getElementById('audioMetaSurahName').innerText = `সূরা ${surahContext.englishNameTranslation}`;
-            document.getElementById('audioMetaAyahIndex').innerText = `আয়াত: ${parseToBenglaNumeral(currentVerseDataNode.numberInSurah)} / ${parseToBenglaNumeral(surahContext.numberOfAyahs)}`;
+            document.getElementById('footerMetaSurahTitle').innerText = `সূরা ${surah.englishNameTranslation}`;
+            document.getElementById('footerMetaAyahIndicator').innerText = `আয়াত: ${mapToBengaliNumeralString(currentVerse.numberInSurah)} / ${mapToBengaliNumeralString(surah.numberOfAyahs)}`;
 
-            nativeAudio.src = currentVerseDataNode.audio;
-            nativeAudio.playbackRate = GlobalAppState.audioSpeedPlaybackRate;
-            nativeAudio.volume = GlobalAppState.audioVolumeLevel;
+            coreAudioPlayer.src = currentVerse.audio;
+            coreAudioPlayer.playbackRate = AppState.playbackRateSpeedVelocity;
+            coreAudioPlayer.volume = AppState.globalVolumeLevel;
         }
 
-        function handleGlobalPlayPauseState() {
-            if(!GlobalAppState.currentActiveSurah) return;
-            if(GlobalAppState.isPlayingState) {
-                nativeAudio.pause();
-                GlobalAppState.isPlayingState = false;
+        function handleMasterPlaybackTrigger() {
+            if(!AppState.currentSurahContextObj) return;
+            if(AppState.isPlaying) {
+                coreAudioPlayer.pause();
+                AppState.isPlaying = false;
             } else {
-                nativeAudio.play().catch(() => {});
-                GlobalAppState.isPlayingState = true;
+                coreAudioPlayer.play().catch(() => {});
+                AppState.isPlaying = true;
             }
-            syncGlobalPlayerMasterButtonUI();
-            repaintWorkspaceVerseHighlights();
+            syncMasterPlayPauseButtonUI();
+            executeHighSpeedTextHighlightUpdates();
         }
 
-        function triggerTargetVersePlayAudio(explicitVerseIndexOffset) {
-            if(GlobalAppState.currentAyahPointerIndex === explicitVerseIndexOffset) {
-                handleGlobalPlayPauseState();
+        function triggerTargetVerseAudioTrackPlayback(explicitVerseIndex) {
+            if(AppState.currentAyahActiveIndex === explicitVerseIndex) {
+                handleMasterPlaybackTrigger();
             } else {
-                GlobalAppState.currentAyahPointerIndex = explicitVerseIndexOffset;
-                refreshGlobalPlayerMetadataDisplayCard();
-                GlobalAppState.isPlayingState = true;
-                nativeAudio.play().catch(() => {});
-                syncGlobalPlayerMasterButtonUI();
-                repaintWorkspaceVerseHighlights();
-                executeAutoCenterScrollAnimation();
+                AppState.currentAyahActiveIndex = explicitVerseIndex;
+                refreshGlobalFooterAudioDeckMetadata();
+                AppState.isPlaying = true;
+                coreAudioPlayer.play().catch(() => {});
+                syncMasterPlayPauseButtonUI();
+                executeHighSpeedTextHighlightUpdates();
+                executeAutoScrollingAnimationToCenterView();
             }
         }
 
-        function triggerNextAyah() {
-            if(!GlobalAppState.currentActiveSurah) return;
-            if(GlobalAppState.currentAyahPointerIndex < GlobalAppState.currentActiveSurah.ayahs.length - 1) {
-                GlobalAppState.currentAyahPointerIndex++;
-                performAudioTrackShiftSequence();
-            } else if(GlobalAppState.isLoopingWholeSurah) {
-                GlobalAppState.currentAyahPointerIndex = 0;
-                performAudioTrackShiftSequence();
+        function playNextVerseTrack() {
+            if(!AppState.currentSurahContextObj) return;
+            if(AppState.currentAyahActiveIndex < AppState.currentSurahContextObj.ayahs.length - 1) {
+                AppState.currentAyahActiveIndex++;
+                performTrackShiftExecutionPipeline();
+            } else if(AppState.isLoopingWholeSurah) {
+                AppState.currentAyahActiveIndex = 0;
+                performTrackShiftExecutionPipeline();
             } else {
-                // Multi-surah bridge traversal engine module integration step boundary
-                if(GlobalAppState.currentActiveSurah.number < 114) {
-                    loadSelectedSurahContext(GlobalAppState.currentActiveSurah.number + 1, 0).then(() => {
-                        handleGlobalPlayPauseState();
+                if(AppState.currentSurahContextObj.number < 114) {
+                    fetchAndLoadSurahDataPackage(AppState.currentSurahContextObj.number + 1, 0).then(() => {
+                        handleMasterPlaybackTrigger();
                     });
                 } else {
-                    GlobalAppState.isPlayingState = false;
-                    syncGlobalPlayerMasterButtonUI();
+                    AppState.isPlaying = false;
+                    syncMasterPlayPauseButtonUI();
                 }
             }
         }
 
-        function triggerPreviousAyah() {
-            if(!GlobalAppState.currentActiveSurah) return;
-            if(GlobalAppState.currentAyahPointerIndex > 0) {
-                GlobalAppState.currentAyahPointerIndex--;
-                performAudioTrackShiftSequence();
+        function playPreviousVerseTrack() {
+            if(!AppState.currentSurahContextObj) return;
+            if(AppState.currentAyahActiveIndex > 0) {
+                AppState.currentAyahActiveIndex--;
+                performTrackShiftExecutionPipeline();
             }
         }
 
-        function performAudioTrackShiftSequence() {
-            refreshGlobalPlayerMetadataDisplayCard();
-            repaintWorkspaceVerseHighlights();
-            executeAutoCenterScrollAnimation();
-            if(GlobalAppState.isPlayingState) {
-                nativeAudio.play().catch(() => {});
+        function performTrackShiftExecutionPipeline() {
+            refreshGlobalFooterAudioDeckMetadata();
+            executeHighSpeedTextHighlightUpdates();
+            executeAutoScrollingAnimationToCenterView();
+            if(AppState.isPlaying) {
+                coreAudioPlayer.play().catch(() => {});
             }
         }
 
-        function repaintWorkspaceVerseHighlights() {
-            if(GlobalAppState.activeDashboardViewTab !== 'read') return;
-            
-            if(GlobalAppState.displayReadingMode === 'ayah') {
-                document.querySelectorAll('.ayah-card-active').forEach(node => node.classList.remove('ayah-card-active'));
-                
-                const currentCardContainerNode = document.getElementById(`verse-card-node-${GlobalAppState.currentAyahPointerIndex}`);
-                if(currentCardContainerNode) currentCardContainerNode.classList.add('ayah-card-active');
+        // High-Speed Dom Targeting Text Only Color Shift Highlight Processor Engine
+        function executeHighSpeedTextHighlightUpdates() {
+            if(AppState.activeNavigationTab !== 'read') return;
 
-                // Dynamic icon switcher mapping configuration step
-                document.querySelectorAll('[id^="verse-card-node-"]').forEach((cardNode, index) => {
-                    const iconElementNode = cardNode.querySelector('.fa-play, .fa-pause');
-                    if(iconElementNode) {
-                        if(index === GlobalAppState.currentAyahPointerIndex && GlobalAppState.isPlayingState) {
-                            iconElementNode.className = 'fa-solid fa-pause text-[var(--accent-emerald)]';
+            if(AppState.displayReadingMode === 'ayah') {
+                // High performance DOM attribute cleanups without heavy screen reflow cycles
+                document.querySelectorAll('.active-text-arabic').forEach(node => node.classList.remove('active-text-arabic'));
+                document.querySelectorAll('.active-text-bangla').forEach(node => node.classList.remove('active-text-bangla'));
+                document.querySelectorAll('.active-octagon').forEach(node => node.classList.remove('active-octagon'));
+
+                const targetArabicTextNode = document.getElementById(`arabic-text-render-node-${AppState.currentAyahActiveIndex}`);
+                const targetBanglaTextNode = document.getElementById(`bangla-text-render-node-${AppState.currentAyahActiveIndex}`);
+                const targetOctagonNode = document.getElementById(`octagon-badge-${AppState.currentAyahActiveIndex}`);
+
+                if(targetArabicTextNode) targetArabicTextNode.classList.add('active-text-arabic');
+                if(targetBanglaTextNode) targetBanglaTextNode.classList.add('active-text-bangla');
+                if(targetOctagonNode) targetOctagonNode.classList.add('active-octagon');
+
+                // Dynamic single icon switcher state updater loops mapping execution
+                document.querySelectorAll('[id^="verse-card-block-"]').forEach((cardBlock, loopIndex) => {
+                    const iconNode = cardBlock.querySelector('.fa-play, .fa-pause');
+                    if(iconNode) {
+                        if(loopIndex === AppState.currentAyahActiveIndex && AppState.isPlaying) {
+                            iconNode.className = 'fa-solid fa-pause text-[var(--accent-emerald)]';
                         } else {
-                            iconElementNode.className = 'fa-solid fa-play';
+                            iconNode.className = 'fa-solid fa-play';
                         }
                     }
                 });
             } else {
-                drawSurahViewerCanvas();
+                document.querySelectorAll('.active-text-arabic').forEach(node => node.classList.remove('active-text-arabic', 'font-semibold'));
+                document.querySelectorAll('.active-text-bangla').forEach(node => node.classList.remove('active-text-bangla'));
+
+                const inlineSpanNode = document.getElementById(`inline-arabic-span-${AppState.currentAyahActiveIndex}`);
+                const inlineParagraphNode = document.getElementById(`inline-bangla-paragraph-${AppState.currentAyahActiveIndex}`);
+
+                if(inlineSpanNode) inlineSpanNode.classList.add('active-text-arabic', 'font-semibold');
+                if(inlineParagraphNode) inlineParagraphNode.classList.add('active-text-bangla');
             }
         }
 
-        function syncGlobalPlayerMasterButtonUI() {
-            const playTriggerButtonIconNode = document.getElementById('globalMasterPlayTrigger');
-            playTriggerButtonIconNode.innerHTML = GlobalAppState.isPlayingState ? `<i class="fa-solid fa-pause"></i>` : `<i class="fa-solid fa-play pl-0.5"></i>`;
+        function syncMasterPlayPauseButtonUI() {
+            const masterBtnNode = document.getElementById('globalPlayPauseFloatingBtn');
+            masterBtnNode.innerHTML = AppState.isPlaying ? `<i class="fa-solid fa-pause"></i>` : `<i class="fa-solid fa-play pl-0.5"></i>`;
         }
 
-        function handleAudioTimelineSeeking(sliderValueData) {
-            if(!nativeAudio.duration) return;
-            nativeAudio.currentTime = (sliderValueData / 100) * nativeAudio.duration;
+        function seekActiveAudioTimeline(sliderValue) {
+            if(!coreAudioPlayer.duration) return;
+            coreAudioPlayer.currentTime = (sliderValue / 100) * coreAudioPlayer.duration;
         }
 
-        function updateAudioVolumeLevel(volumeValueSliderInput) {
-            GlobalAppState.audioVolumeLevel = volumeValueSliderInput;
-            nativeAudio.volume = volumeValueSliderInput;
+        function changeAppVolumeIntensity(sliderValue) {
+            AppState.globalVolumeLevel = sliderValue;
+            coreAudioPlayer.volume = sliderValue;
             
-            const volumeIconNode = document.getElementById('playerVolumeStateIcon');
-            if(volumeValueSliderInput == 0) volumeIconNode.innerHTML = `<i class="fa-solid fa-volume-xmark text-red-400"></i>`;
-            else if(volumeValueSliderInput < 0.5) volumeIconNode.innerHTML = `<i class="fa-solid fa-volume-low"></i>`;
-            else volumeIconNode.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+            const volumeIconBadgeNode = document.getElementById('playerVolumeIconBadge');
+            if(sliderValue == 0) volumeIconBadgeNode.innerHTML = `<i class="fa-solid fa-volume-xmark text-red-400"></i>`;
+            else if(sliderValue < 0.5) volumeIconBadgeNode.innerHTML = `<i class="fa-solid fa-volume-low"></i>`;
+            else volumeIconBadgeNode.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
         }
 
-        function handleAudioMuteToggling() {
-            const volumeSliderElementNode = document.getElementById('playerVolumeSlider');
-            if(nativeAudio.volume > 0) {
-                volumeSliderElementNode.value = 0;
-                updateAudioVolumeLevel(0);
+        function toggleAudioMuteState() {
+            const sliderComponent = document.getElementById('playerVolumeControlSlider');
+            if(coreAudioPlayer.volume > 0) {
+                sliderComponent.value = 0;
+                changeAppVolumeIntensity(0);
             } else {
-                volumeSliderElementNode.value = 1;
-                updateAudioVolumeLevel(1);
+                sliderComponent.value = 1;
+                changeAppVolumeIntensity(1);
             }
         }
 
-        function updatePlayerSpeedRate(speedSelectionValue) {
-            GlobalAppState.audioSpeedPlaybackRate = parseFloat(speedSelectionValue);
-            nativeAudio.playbackRate = GlobalAppState.audioSpeedPlaybackRate;
+        function adjustAudioPlaybackVelocity(speedValue) {
+            AppState.playbackRateSpeedVelocity = parseFloat(speedValue);
+            coreAudioPlayer.playbackRate = AppState.playbackRateSpeedVelocity;
         }
 
-        function toggleSingleVerseLoop() {
-            GlobalAppState.isLoopingSingleVerse = !GlobalAppState.isLoopingSingleVerse;
-            const buttonNode = document.getElementById('loopVerseIconBtn');
-            if(GlobalAppState.isLoopingSingleVerse) {
+        function toggleSingleVerseLoopOption() {
+            AppState.isLoopingSingleVerse = !AppState.isLoopingSingleVerse;
+            const buttonNode = document.getElementById('loopSingleVerseToggleBtn');
+            if(AppState.isLoopingSingleVerse) {
                 buttonNode.classList.add('text-[var(--accent-gold)]');
-                if(GlobalAppState.isLoopingWholeSurah) toggleWholeSurahLoop();
+                if(AppState.isLoopingWholeSurah) toggleWholeSurahLoopOption();
             } else {
                 buttonNode.classList.remove('text-[var(--accent-gold)]');
             }
         }
 
-        function toggleWholeSurahLoop() {
-            GlobalAppState.isLoopingWholeSurah = !GlobalAppState.isLoopingWholeSurah;
-            const buttonNode = document.getElementById('loopSurahIconBtn');
-            if(GlobalAppState.isLoopingWholeSurah) {
+        function toggleWholeSurahLoopOption() {
+            AppState.isLoopingWholeSurah = !AppState.isLoopingWholeSurah;
+            const buttonNode = document.getElementById('loopWholeSurahToggleBtn');
+            if(AppState.isLoopingWholeSurah) {
                 buttonNode.classList.add('text-[var(--accent-gold)]');
-                if(GlobalAppState.isLoopingSingleVerse) toggleSingleVerseLoop();
+                if(AppState.isLoopingSingleVerse) toggleSingleVerseLoopOption();
             } else {
                 buttonNode.classList.remove('text-[var(--accent-gold)]');
             }
         }
 
-        async function changeReciterProfile(reciterSelectedStringValue) {
-            GlobalAppState.activeReciterEdition = reciterSelectedStringValue;
-            localStorage.setItem('quran_reciter', reciterSelectedStringValue);
-            if(GlobalAppState.currentActiveSurah) {
-                await loadSelectedSurahContext(GlobalAppState.currentActiveSurah.number, GlobalAppState.currentAyahPointerIndex);
+        async function switchAppReciterContext(reciterIdStringValue) {
+            AppState.activeReciterIdString = reciterIdStringValue;
+            localStorage.setItem('quran_reciter', reciterIdStringValue);
+            if(AppState.currentSurahContextObj) {
+                await fetchAndLoadSurahDataPackage(AppState.currentSurahContextObj.number, AppState.currentAyahActiveIndex);
             }
         }
 
-        function updateViewMode(targetModeString) {
-            GlobalAppState.displayReadingMode = targetModeString;
-            const viewModeAyahButtonNode = document.getElementById('viewModeAyah');
-            const viewModePageButtonNode = document.getElementById('viewModePage');
+        function changeAppReadingMode(targetDisplayMode) {
+            AppState.displayReadingMode = targetDisplayMode;
+            const tabAyahNode = document.getElementById('modeTabAyah');
+            const tabPageNode = document.getElementById('modeTabPage');
 
-            if(targetModeString === 'ayah') {
-                viewModeAyahButtonNode.className = 'px-3 py-1.5 rounded-md bg-[var(--bg-card)] text-[var(--accent-gold)] transition bangla-text cursor-pointer';
-                viewModePageButtonNode.className = 'px-3 py-1.5 rounded-md text-[var(--text-muted)] transition bangla-text cursor-pointer';
+            if(targetDisplayMode === 'ayah') {
+                tabAyahNode.className = 'px-3 py-1.5 rounded-md bg-[var(--bg-card)] text-[var(--accent-gold)] transition bangla-text cursor-pointer';
+                tabPageNode.className = 'px-3 py-1.5 rounded-md text-[var(--text-muted)] transition bangla-text cursor-pointer';
             } else {
-                viewModePageButtonNode.className = 'px-3 py-1.5 rounded-md bg-[var(--bg-card)] text-[var(--accent-gold)] transition bangla-text cursor-pointer';
-                viewModeAyahButtonNode.className = 'px-3 py-1.5 rounded-md text-[var(--text-muted)] transition bangla-text cursor-pointer';
+                tabPageNode.className = 'px-3 py-1.5 rounded-md bg-[var(--bg-card)] text-[var(--accent-gold)] transition bangla-text cursor-pointer';
+                tabAyahNode.className = 'px-3 py-1.5 rounded-md text-[var(--text-muted)] transition bangla-text cursor-pointer';
             }
 
-            if(GlobalAppState.currentActiveSurah && GlobalAppState.activeDashboardViewTab === 'read') {
-                drawSurahViewerCanvas();
+            if(AppState.currentSurahContextObj && AppState.activeNavigationTab === 'read') {
+                drawActiveSurahCanvasScreen();
             }
         }
 
-        // ---------------- Persistent Bookmark & Clipboard Module Utilities ----------------
-        function toggleVerseBookmarkPersistence(surahNumberID, ayahNumberID, surahNameTranslationString) {
-            const existingRecordIndex = GlobalAppState.userSavedBookmarks.findIndex(item => item.surah === surahNumberID && item.ayah === ayahNumberID);
+        // ---------------- Bookmarks Storage & Action Utilities Module ----------------
+        function toggleVerseBookmarkPersistenceStorage(surahNo, ayahNo, surahTranslationName) {
+            const indexMatch = AppState.userSavedBookmarksList.findIndex(record => record.surah === surahNo && record.ayah === ayahNo);
 
-            if(existingRecordIndex > -1) {
-                GlobalAppState.userSavedBookmarks.splice(existingRecordIndex, 1);
+            if(indexMatch > -1) {
+                AppState.userSavedBookmarksList.splice(indexMatch, 1);
             } else {
-                GlobalAppState.userSavedBookmarks.push({
-                    surah: surahNumberID,
-                    ayah: ayahNumberID,
-                    surahName: surahNameTranslationString
+                AppState.userSavedBookmarksList.push({
+                    surah: surahNo,
+                    ayah: ayahNo,
+                    surahName: surahTranslationName
                 });
             }
 
-            localStorage.setItem('quran_bookmarks', JSON.stringify(GlobalAppState.userSavedBookmarks));
+            localStorage.setItem('quran_bookmarks', JSON.stringify(AppState.userSavedBookmarksList));
             
-            if(GlobalAppState.activeDashboardViewTab === 'bookmark') {
-                renderUserBookmarksDashboard();
+            if(AppState.activeNavigationTab === 'bookmark') {
+                loadUserBookmarksDashboardPage();
             } else {
-                drawSurahViewerCanvas();
+                drawActiveSurahCanvasScreen();
             }
         }
 
-        function copyVerseToClipboardData(surahNumberID, ayahNumberID, localVerseIndexOffset) {
-            const targetAyahNodeContext = GlobalAppState.currentActiveSurah.ayahs[localVerseIndexOffset];
-            const parsedStringPackage = `${targetAyahNodeContext.text}\n\n${targetAyahNodeContext.banglaTranslationText}\n(সূরা ${GlobalAppState.currentActiveSurah.englishNameTranslation}: আয়াত ${parseToBenglaNumeral(ayahNumberID)})`;
+        function copyVerseDataToSystemClipboard(surahNo, ayahNo, localIndexOffset) {
+            const verseNode = AppState.currentSurahContextObj.ayahs[localIndexOffset];
+            const structuredStringData = `${verseNode.text}\n\n${verseNode.banglaTranslationStringText}\n(সূরা ${AppState.currentSurahContextObj.englishNameTranslation}: আয়াত ${mapToBengaliNumeralString(ayahNo)})`;
             
-            navigator.clipboard.writeText(parsedStringPackage).then(() => {
-                alert("আয়াত সফলভাবে কপি হয়েছে!");
+            navigator.clipboard.writeText(structuredStringData).then(() => {
+                alert("আয়াত কপি সম্পন্ন হয়েছে!");
             }).catch(() => {});
         }
 
-        function shareVerseNativeWebShareAPI(surahNumberID, ayahNumberID, localVerseIndexOffset) {
-            const targetAyahNodeContext = GlobalAppState.currentActiveSurah.ayahs[localVerseIndexOffset];
+        function shareVerseContextViaWebAPI(surahNo, ayahNo, localIndexOffset) {
+            const verseNode = AppState.currentSurahContextObj.ayahs[localIndexOffset];
             if(navigator.share) {
                 navigator.share({
-                    title: `সূরা ${GlobalAppState.currentActiveSurah.englishNameTranslation}`,
-                    text: `${targetAyahNodeContext.text}\n\n${targetAyahNodeContext.banglaTranslationText}\n(আয়াত: ${parseToBenglaNumeral(ayahNumberID)})`
+                    title: `সূরা ${AppState.currentSurahContextObj.englishNameTranslation}`,
+                    text: `${verseNode.text}\n\n${verseNode.banglaTranslationStringText}\n(আয়াত: ${mapToBengaliNumeralString(ayahNo)})`
                 }).catch(() => {});
             } else {
-                copyVerseToClipboardData(surahNumberID, ayahNumberID, localVerseIndexOffset);
+                copyVerseDataToSystemClipboard(surahNo, ayahNo, localIndexOffset);
             }
         }
     </script>
